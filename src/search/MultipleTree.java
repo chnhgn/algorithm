@@ -22,7 +22,7 @@ public class MultipleTree {
 			return t;
 		} else {
 			for (TreeNode child : t.children) {
-				t = insert(p, s, child);
+				insert(p, s, child);
 			}
 		}
 		
@@ -53,6 +53,30 @@ public class MultipleTree {
 		}
 	}
 	
+	public void search(String name){
+		this.search(name, root);
+	}
+	
+	/**
+	 * Search the corresponding tree node
+	 * @param name
+	 * @return
+	 */
+	private void search(String name, TreeNode node){
+		if (node != null) {
+			if (node.self.equals(name)) {	// Found the node
+				System.out.println("Parent is: " + node.parent);
+				System.out.println("The node is: " + name);
+			} else {
+				for (TreeNode child : node.children) {
+					search(name, child);
+				}
+			}
+		}
+	}
+	
+	
+	
 	
 	
 	public static void main(String[] args) {
@@ -66,6 +90,8 @@ public class MultipleTree {
 		tree.insert("EDMT", "Michael");
 		
 		tree.preOrder(tree.root);
+		System.out.println("--------------Grooming line--------------");
+		tree.search("John");
 		
 	}
 	
