@@ -71,6 +71,7 @@ public class RBTree<T extends Comparable<T>> {
 		if (isRed(node.left) && isRed(node.right)) {	// Both sides are red
 			node.left.color = BLACK;
 			node.right.color = BLACK;
+			node.color = RED;
 		}
 		
 		return node;
