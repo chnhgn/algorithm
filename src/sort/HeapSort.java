@@ -27,10 +27,11 @@ public class HeapSort {
 			buffer.append(String.valueOf(arr[0]));
 			buffer.append(" ");
 			
-			// Forward one step for the whole original array
-			for (int m = 0; m < len-1; m++) {
-				arr[m] = arr[m+1];
-			}
+			// Swap the max element and the last element of the array then skin off the last element.
+			int tmp;
+			tmp = arr[0];
+			arr[0] = arr[len-1];
+			arr[len-1] = tmp;
 			len--;
 			MaxHeapSort(arr, len);
 			
