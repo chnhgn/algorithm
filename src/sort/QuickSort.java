@@ -15,18 +15,18 @@ public class QuickSort {
 	public void sort(int[] arr, int left, int right) {
 		// TODO Auto-generated method stub
 		if (left < right) {
-			int key = arr[left];	// This is the key value
+//			int key = arr[left];	// This is the key value
 			int low = left;
 			int high = right;
 			while (low < high) {	// Sort for one round
-				while (low< high && arr[high]>key) {
+				while (low< high && arr[high]>arr[low]) {
 					high--;
 				}
 				int temp = arr[low];
 				arr[low] = arr[high];
 				arr[high] = temp;
 				
-				while (low<high && arr[low]<=key) {
+				while (low<high && arr[low]<=arr[high]) {
 					low++;
 				}
 				temp = arr[low];
